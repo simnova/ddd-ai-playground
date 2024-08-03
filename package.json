@@ -1,0 +1,18 @@
+{
+  "name": "ddd-ai-playground",
+  "version": "1.0.0",
+  "description": "Exploring different approaches to augment ddd with ai",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@githubnext/vitale": "^0.0.17",
+    "typescript": "npm:@githubnext/typescript@^5.4.5-hacked.1"
+  },
+  "dependencies": {
+    "openai": "^4.54.0"
+  }
+}

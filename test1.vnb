@@ -1,0 +1,1 @@
+{cells:[{kind:2,language:'typescriptreact',value:'let x=1;\n\nwhile(x<10){\n    console.log(x);\n    x++;\n}\n\nVitale.text(`Hello World{${x}}`);',metadata:{id:'TkNEmy3Nl6zpazjLeXzdD'}}]}
