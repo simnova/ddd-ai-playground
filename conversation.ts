@@ -23,7 +23,7 @@ export const conversation = async (openai:OpenAI, messages: OpenAI.Chat.Completi
         if(functionSpec){
             const functionArgs = JSON.parse(toolCall.function.arguments);
             const functionResponse = functionSpec.tool(functionArgs);
-           var x: OpenAI.Chat.Completions.ChatCompletionMessageParam;
+           
            
             messages.push({
               tool_call_id: toolCall.id,

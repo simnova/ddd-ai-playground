@@ -25,13 +25,24 @@ export const currentWeather:Tool<Props> = {
     },
   },
   tool: (props:Props) => {
-    const {location, unit} = props;
+    let {location, unit} = props;
+    if (!unit) {
+      unit = "celsius";
+    }
+  
     if (location.toLowerCase().includes("tokyo")) {
-      return JSON.stringify({ location: "Tokyo", temperature: "11", unit: "celsius" });
+      const tempInCelsius = 11;
+      const tempInFahrenheit = tempInCelsius * 1.8 + 32;
+      return JSON.stringify({ location: "Tokyo", temperature: unit == "celsius" ? tempInCelsius: tempInFahrenheit, unit: unit });
     } else if (location.toLowerCase().includes("san francisco")) {
-      return JSON.stringify({ location: "San Francisco", temperature: "73", unit: "fahrenheit" });
+      const tempInFahrenheit = 73;
+      const tempInCelsius = (tempInFahrenheit - 32) / 1.8;
+
+      return JSON.stringify({ location: "San Francisco", temperature: unit == "celsius" ? tempInCelsius: tempInFahrenheit, unit: unit  });
     } else if (location.toLowerCase().includes("paris")) {
-      return JSON.stringify({ location: "Paris", temperature: "23", unit: "fahrenheit" });
+      const tempInFahrenheit = 23;
+      const tempInCelsius = (tempInFahrenheit - 32) / 1.8;
+      return JSON.stringify({ location: "Paris", temperature: unit == "celsius" ? tempInCelsius: tempInFahrenheit, unit: unit });
     } else {
       return JSON.stringify({ location, temperature: "unknown" });
     }
