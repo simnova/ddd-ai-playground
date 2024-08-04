@@ -2,17 +2,22 @@
   "name": "ddd-ai-playground",
   "version": "1.0.0",
   "description": "Exploring different approaches to augment ddd with ai",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "dev": "tsx ./index.ts",
+    "start": "node dist/index.js"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@githubnext/vitale": "^0.0.17",
+    "tsx": "^4.16.5",
     "typescript": "npm:@githubnext/typescript@^5.4.5-hacked.1"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "openai": "^4.54.0"
   }
 }
