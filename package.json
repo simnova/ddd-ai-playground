@@ -6,18 +6,24 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
+    "copy-files": "copyfiles tools/**/*.graphql dist/",
     "dev": "tsx ./index.ts",
-    "start": "node dist/index.js"
+    "start": "npm run build && npm run copy-files && node dist/index.js" 
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "@githubnext/vitale": "^0.0.17",
+    "@types/node": "^22.1.0",
+    "copyfiles": "^2.4.1",
     "tsx": "^4.16.5",
     "typescript": "npm:@githubnext/typescript@^5.4.5-hacked.1"
   },
   "dependencies": {
+    "@apollo/server": "^4.10.5",
     "dotenv": "^16.4.5",
+    "graphql": "^16.9.0",
+    "graphql-scalars": "^1.23.0",
     "openai": "^4.54.0"
   }
 }

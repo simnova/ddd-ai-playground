@@ -1,4 +1,4 @@
-import {Tool} from "../tool-spec";
+import {Tool} from '../tool-spec';
 
 type Props = {
   location: string;
@@ -24,12 +24,11 @@ export const currentWeather:Tool<Props> = {
       },
     },
   },
-  tool: (props:Props) => {
+  tool: async (props:Props) =>  {
     let {location, unit} = props;
     if (!unit) {
       unit = "celsius";
-    }
-  
+    }  
     if (location.toLowerCase().includes("tokyo")) {
       const tempInCelsius = 11;
       const tempInFahrenheit = tempInCelsius * 1.8 + 32;
@@ -37,7 +36,6 @@ export const currentWeather:Tool<Props> = {
     } else if (location.toLowerCase().includes("san francisco")) {
       const tempInFahrenheit = 73;
       const tempInCelsius = (tempInFahrenheit - 32) / 1.8;
-
       return JSON.stringify({ location: "San Francisco", temperature: unit == "celsius" ? tempInCelsius: tempInFahrenheit, unit: unit  });
     } else if (location.toLowerCase().includes("paris")) {
       const tempInFahrenheit = 23;

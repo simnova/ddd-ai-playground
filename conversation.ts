@@ -2,7 +2,7 @@ import OpenAI from "openai";
 import { Tool } from './tools/tool-spec';
 
 export const conversation = async (openai:OpenAI, messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[], tools: Tool<any>[]) =>{
-  
+    // Step 1: send the user's message
     const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: messages,
@@ -23,12 +23,10 @@ export const conversation = async (openai:OpenAI, messages: OpenAI.Chat.Completi
         if(functionSpec){
             const functionArgs = JSON.parse(toolCall.function.arguments);
             const functionResponse = functionSpec.tool(functionArgs);
-           
-           
             messages.push({
               tool_call_id: toolCall.id,
               role: "tool",
-              content: functionResponse,
+              content: await functionResponse,
             }); // extend conversation with function response
         }
       }
@@ -39,4 +37,3 @@ export const conversation = async (openai:OpenAI, messages: OpenAI.Chat.Completi
       return secondResponse.choices;
     }
   }
-  
