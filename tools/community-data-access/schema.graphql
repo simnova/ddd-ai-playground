@@ -1,0 +1,16 @@
+type Community {
+  name: String
+  domain: String
+  whiteLabelDomain: String
+  handle: String
+  publicContentBlobUrl: String
+  id: ObjectID!
+  createdAt: DateTime
+  updatedAt: DateTime
+  userIsAdmin: Boolean
+}
+type Query {
+  community: Community
+  communityById(id: ID!): Community
+  communities: [Community]
+}

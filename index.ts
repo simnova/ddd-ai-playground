@@ -12,7 +12,7 @@ import {conversation} from './conversation';
 
 const main = async () => {
     const messages: OpenAI.ChatCompletionMessageParam[] = [
-        { role: "user", content: "What's the weather like in San Francisco, Tokyo, and Paris?", name: "message-1" },
+        { role: "user", content: "Please show me all the communities I have access to", name: "message-1" },
     ];
 
     const result = await conversation(openai, messages, tools);
