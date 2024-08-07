@@ -8,7 +8,7 @@
     "build": "tsc",
     "copy-files": "copyfiles tools/**/*.graphql dist/",
     "dev": "tsx ./index.ts",
-    "start": "npm run build && npm run copy-files && node dist/index.js" 
+    "start": "npm run build && npm run copy-files && node dist/index.js"
   },
   "author": "",
   "license": "MIT",
@@ -24,6 +24,7 @@
     "dotenv": "^16.4.5",
     "graphql": "^16.9.0",
     "graphql-scalars": "^1.23.0",
-    "openai": "^4.54.0"
+    "openai": "^4.54.0",
+    "zod": "^3.23.8"
   }
 }

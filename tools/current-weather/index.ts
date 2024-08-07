@@ -21,6 +21,7 @@ export const currentWeather:Tool<Props> = {
           unit: { type: "string", enum: ["celsius", "fahrenheit"] },
         },
         required: ["location"],
+        additionalProperties: false,
       },
     },
   },

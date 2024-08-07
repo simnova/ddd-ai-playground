@@ -5,3 +5,8 @@ https://github.com/githubnext/vitale
 
 
 ![intro](https://github.com/user-attachments/assets/d7e4c478-45f9-4821-a754-78e4ca0d4195)
+
+
+Todo: 
+* Incoporate evaluation metrics:
+https://cookbook.openai.com/examples/evaluation/getting_started_with_openai_evals
