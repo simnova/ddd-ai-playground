@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { Tool } from './tools/tool-spec';
+import { Tool } from '../tools/tool-spec';
 
 export const conversation = async (openai:OpenAI, messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[], tools: Tool<any>[]) =>{
     // Step 1: send the user's message
